@@ -1,0 +1,6 @@
+name "devloop"
+description "D event loop"
+authors "deviator"
+license "MIT"
+
+targetType "library"

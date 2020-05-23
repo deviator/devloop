@@ -1,0 +1,15 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/devloop
+devloop.so
+devloop.dylib
+devloop.dll
+devloop.a
+devloop.lib
+devloop-test-*
+*.exe
+*.o
+*.obj
+*.lst
