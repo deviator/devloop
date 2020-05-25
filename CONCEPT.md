@@ -8,42 +8,8 @@ Because idea born in russian telegram channel start working on concept on russia
 
 ### Возможность писать синхронный код в файберах, где операции io будут неблокирующими
 
-Наример что-то вроде этого:
-```d
-void main()
-{
-    auto sp1 = new SerialPort(...);
-    auto sp2 = new SerialPort(...);
-    auto other = makeOtherIO;
+### Возможность писать код с использованием callback'ов
 
-    auto w1 = makeWorker(
-    {
-        void[4096] buffer = void;
-        while (true)
-        {
-            const r = sp1.readUntil(buffer[], "\n"); // Fiber.yield внутри read
-            const str = cast(char[])buffer[0..r];
-            sp2.write(someProcess(str)); // Fiber.yield внутри write
-        }
-    });
-
-    auto w2 = makeWorker(
-    {
-        void[4096] buffer = void;
-        while (true)
-        {
-            const r = other.read(buffer[]); // Fiber.yield внутри read, выход по timeout, например
-            doSomethingWithData(buffer[0..r]);
-        }
-    });
-
-    eventLoop();
-}
-```
-
-### Возможность писать код с использованием callback'ов (нужно?)
-
-TODO: краткий пример
 
 ## Ориентированность на linux
 
@@ -70,6 +36,16 @@ TODO: краткий пример
 `mosquitto_loop_read` и `mosquitto_loop_write` реализуют работу библиотеки при чтении и
 записи в этот сокет. Так же есть функция `mosquitto_loop_misc`, которая должна вызываться
 раз в секунду.
+
+## Поддержка POLLPRI
+
+### GPIO
+
+https://raspberrypi.stackexchange.com/questions/44416/polling-gpio-pin-from-c-always-getting-immediate-response
+
+https://www.kernel.org/doc/Documentation/gpio/sysfs.txt
+
+### Net (?)
 
 # Существующие решения
 

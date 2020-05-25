@@ -1,0 +1,4 @@
+name "callbacktest"
+mainSourceFile "app.d"
+targetType "executable"
+dependency "devloop" path="../.."

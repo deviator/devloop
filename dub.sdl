@@ -1,6 +1,13 @@
 name "devloop"
 description "D event loop"
-authors "deviator"
+authors "deviator" "ikod"
 license "MIT"
 
 targetType "library"
+
+configuration "safe" {
+    versions "checkNullEvLoop" "checkNullCallback"
+}
+
+configuration "speed" {
+}
