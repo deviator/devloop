@@ -29,6 +29,20 @@ Because idea born in russian telegram channel start working on concept on russia
 8. события (eventfd)
 9. fanotify, inotify
 
+## предложение для интерфейса
+
+        void delegate(scope Duration = Duration.max)       run;  // run event loop for some time
+        @safe void delegate()                              stop; // stop it (exit from loop)
+        @safe void delegate(Timer)                         startTimer; // start timer
+        @safe void delegate(Timer)                         stopTimer;  // stop timer
+        void delegate(Signal)                              startSignal; // start signal handling
+        void delegate(Signal)                              stopSignal;  // stop signal handling
+        @safe void delegate(int, AppEvent, FileEventHandler)   startPoll; // start listening to events on file
+        @safe void delegate(int, AppEvent)                 stopPoll;  // stop listening to some events on file
+        @safe void delegate(int)                           detach;    // detach file from loop (release space)
+        @safe void delegate()                              deinit;    // close pollfd, timerfd,..., free memory
+
+
 ## Возможность интергации внешних библиотек в event loop
 
 Пример [`mosquitto`](https://mosquitto.org/api) (работа с MQTT протоколом).
