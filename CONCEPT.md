@@ -130,3 +130,4 @@ https://www.kernel.org/doc/Documentation/gpio/sysfs.txt
 # Полезные ссылки
 
 1. Упоминание реализации таймеров высокого разрешения в `libevent`: https://stackoverflow.com/q/240058/7695184
+2. poll with io_uring https://developpaper.com/using-io_uring-instead-of-epoll-to-realize-high-speed-polling/
