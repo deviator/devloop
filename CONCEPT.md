@@ -129,5 +129,19 @@ https://www.kernel.org/doc/Documentation/gpio/sysfs.txt
 
 # Полезные ссылки
 
-1. Упоминание реализации таймеров высокого разрешения в `libevent`: https://stackoverflow.com/q/240058/7695184
-2. poll with io_uring https://developpaper.com/using-io_uring-instead-of-epoll-to-realize-high-speed-polling/
+## Разное
+
+- Упоминание реализации таймеров высокого разрешения в `libevent`: https://stackoverflow.com/q/240058/7695184
+- В Windows 10 добавлена поддержка AF_UNIX сокетов: https://devblogs.microsoft.com/commandline/af_unix-comes-to-windows/
+
+## io_uring
+
+- poll with io_uring https://developpaper.com/using-io_uring-instead-of-epoll-to-realize-high-speed-polling/
+- Софт в котором заявлена поддержка `io_uring`: https://stackoverflow.com/a/57451551/7695184
+- Заявка в GsoC на добавление `io_uring` в Java библиотеку Netty: https://github.com/netty/netty/wiki/Google-Summer-of-Code-Ideas-2020
+
+## Async Disk IO
+
+- Описание и примеры AIO в Linux для асинхронных операций с файлами: https://kkourt.io/blog/2017/10-14-linux-aio.html (скрытая возможность: поддерживает eventfd для уведомления о выполненных действиях), не поддерживает Buffered IO (работает только с `O_DIRECT`)
+- Бенчмарк Lighttpd сервера при отдаче файлов разными способами: https://www.lighttpd.net/2007/2/11/buffered-io-performance/
+- Заметка автора libtorrent об Asynchronous Disk IO: https://blog.libtorrent.org/2012/10/asynchronous-disk-io/
