@@ -22,7 +22,7 @@ Because idea born in russian telegram channel start working on concept on russia
 
 1. сетевые сокеты
 2. unix-сокеты
-3. ком-порты и терминалы (/dev/tty*)
+3. девайсы (ком-порты и терминалы /dev/tty*)
 4. каналы (pipe)
 5. файлы
 6. таймеры (timerfd)
